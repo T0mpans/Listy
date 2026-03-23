@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Listy</string>
+    <string-array name="jezyki_programowania">
+        <item>php</item>
+        <item>Java</item>
+        <item>C++</item>
+        <item>Python</item>
+        <item>C#</item>
+    </string-array>
 </resources>
