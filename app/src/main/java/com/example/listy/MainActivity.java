@@ -1,6 +1,9 @@
 package com.example.listy;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -30,8 +33,16 @@ public class MainActivity extends AppCompatActivity {
         jezykiArrayList.add("Kotlin");
         jezykiArrayList.add("Go");
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, jezykiArrayList);
-
         listView = findViewById(R.id.listViewJezyki);
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                view.setBackgroundColor(Color.GREEN);
+                jezykiArrayList.remove(i);
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }
